@@ -1,0 +1,158 @@
+.calc{
+    display: grid;
+    justify-content: center;
+    grid-template-columns:1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    'scr      scr      scr     scr'
+    'clear    clear    del     div'
+    'seven    eight    nine    mult'
+    'four     five     six     minus'
+    'one      two      three   plus'
+    'zer      zer      zer     equal'
+    ;
+}
+
+.scr{
+    text-align: center;
+    grid-area: scr;
+    border: 2px solid black;
+    padding: 0;
+    margin: 0;
+}
+
+.clear{
+    text-align: center;
+    grid-area: clear;
+    border: 2px solid black;
+    padding: 0;
+    margin: 0;    
+}
+
+.del{
+    text-align: center;
+    grid-area: del;
+    border: 2px solid black;
+    padding: 0;
+    margin: 0;
+}
+
+.div{
+    text-align: center;
+    grid-area: div;
+    border: 2px solid black;
+    padding: 0;
+    margin: 0;
+}
+
+.mult{
+    text-align: center;
+    grid-area: mult;
+    border: 2px solid black;
+    padding: 0;
+    margin: 0;
+}
+
+.plus{
+    text-align: center;
+    grid-area: plus;
+    border: 2px solid black;
+    padding: 0;
+    margin: 0;
+}
+
+.minus{
+    text-align: center;
+    grid-area: minus;
+    border: 2px solid black;
+    padding: 0;
+    margin: 0;
+}
+
+.equal{
+    text-align: center;
+    grid-area: equal;
+    border: 2px solid black;
+    padding: 0;
+    margin: 0;
+}
+
+
+.one{
+    text-align: center;
+    grid-area: one;
+    border: 2px solid black;
+    padding: 0;
+    margin: 0;
+}
+
+.two{
+    text-align: center;
+    grid-area: two;
+    border: 2px solid black;
+    padding: 0;
+    margin: 0;
+}
+
+.three{
+    text-align: center;
+    grid-area: three;
+    border: 2px solid black;
+    padding: 0;
+    margin: 0;
+}
+
+.four{
+    text-align: center;
+    grid-area: four;
+    border: 2px solid black;
+    padding: 0;
+    margin: 0;
+}
+
+.five{
+    text-align: center;
+    grid-area: five;
+    border: 2px solid black;
+    padding: 0;
+    margin: 0;
+}
+
+.six{
+    text-align: center;
+    grid-area: six;
+    border: 2px solid black;
+    padding: 0;
+    margin: 0;
+}
+
+.seven{
+    text-align: center;
+    grid-area:seven;
+    border: 2px solid black;
+    padding: 0;
+    margin: 0;
+}
+
+.eight{
+    text-align: center;
+    grid-area: eight;
+    border: 2px solid black;
+    padding: 0;
+    margin: 0;
+}
+
+.nine{
+    text-align: center;
+    grid-area: nine;
+    border: 2px solid black;
+    padding: 0;
+    margin: 0; 
+}
+
+.zer{
+    text-align: center;
+    grid-area: zer;
+    border: 2px solid black;
+    padding: 0;
+    margin: 0;
+}
