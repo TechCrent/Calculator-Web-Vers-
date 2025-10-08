@@ -22,194 +22,103 @@
     border: 1.5px solid black;
     padding: 0;
     margin: 0;
+    background-color: black;
+}
+
+.clear,.del,.div,.mul, .plus,.minus,.equal,.one,.two,.three,.four,.five,.six,.seven,.eight,.nine,.zer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1.3px solid black;
+    padding: 0;
+    margin: 0;    
+    font-size: 35px;
+    font-family:sans-serif;
+    background-color: #d8d9db;
+}
+
+.div,.mul,.minus,.plus,.equal{
+    background-color: #df974c;
+    color: white;
 }
 
 .clear{
-    display: flex;
-    align-items: center;
-    justify-content: center;
     grid-area: clear;
-    border: 1.5px solid black;
-    padding: 0;
-    margin: 0;    
-    font-size: 40px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-left-color: #d8d9db;
 }
 
 .del{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
     grid-area: del;
-    border: 1.5px solid black;
-    padding: 0;
-    margin: 0;
 }
 
 .div{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
     grid-area: div;
-    border: 1.5px solid black;
-    padding: 0;
-    margin: 0;
+    border-right-color: #df974c;
 }
 
 .mul{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
     grid-area: mul;
-    border: 1.5px solid black;
-    padding: 0;
-    margin: 0;
+    border-right-color: #df974c;
 }
 
 .plus{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
     grid-area: plus;
-    border: 1.5px solid black;
-    padding: 0;
-    margin: 0;
+    border-right-color: #df974c;
 }
 
 .minus{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
     grid-area: minus;
-    border: 1.5px solid black;
-    padding: 0;
-    margin: 0;
+    border-right-color: #df974c;
 }
 
 .equal{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
     grid-area: equal;
-    border: 1.5px solid black;
-    padding: 0;
-    margin: 0;
+    border-bottom-color: #df974c;
+    border-right-color: #df974c;
 }
 
 
 .one{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
     grid-area: one;
-    border: 1.5px solid black;
-    padding: 0;
-    margin: 0;
+    border-left-color: #d8d9db;
 }
 
 .two{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
     grid-area: two;
-    border: 1.5px solid black;
-    padding: 0;
-    margin: 0;
 }
 
 .three{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
     grid-area: three;
-    border: 1.5px solid black;
-    padding: 0;
-    margin: 0;
 }
 
 .four{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
     grid-area: four;
-    border: 1.5px solid black;
-    padding: 0;
-    margin: 0;
+    border-left-color: #d8d9db;
 }
 
 .five{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
     grid-area: five;
-    border: 1.5px solid black;
-    padding: 0;
-    margin: 0;
 }
 
 .six{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
     grid-area: six;
-    border: 1.5px solid black;
-    padding: 0;
-    margin: 0;
 }
 
 .seven{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
     grid-area:seven;
-    border: 1.5px solid black;
-    padding: 0;
-    margin: 0;
+    border-left-color: #d8d9db;
 }
 
 .eight{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
     grid-area: eight;
-    border: 1.5px solid black;
-    padding: 0;
-    margin: 0;
 }
 
 .nine{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    grid-area: nine;
-    border: 1.5px solid black;
-    padding: 0;
-    margin: 0; 
+    grid-area: nine; 
 }
 
 .zer{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
     grid-area: zer;
-    border: 1.5px solid black;
-    border-bottom: 3px solid;
-    padding: 0;
-    margin: 0;
+    border-bottom-color: #d8d9db;
+    border-left-color: #d8d9db;
 }
