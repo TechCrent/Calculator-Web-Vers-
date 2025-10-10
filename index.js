@@ -8,20 +8,39 @@
     }
 });*/
 
+//Adding Function
+
+
 
 const screen = document.querySelector(".scr");
+let currentNumber = 0;
+let pastNumber = 0;
+let operator = '+'
 
 
 const div = document.querySelector(".div");
-
 const mul = document.querySelector(".mul");
-
 const minus = document.querySelector(".minus");
-
 const plus = document.querySelector(".plus");
+
+symbols=[div,mul,minus,plus]
+for( let sym of symbols){
+    sym.addEventListener("click",function(){
+    if (screen.innerText > 0){
+        if(){
+            currentNumber = Number(screen.innerText);
+            screen.innerText = "0"; 
+
+        }
+    }
+    })
+}
 
 
 const equal = document.querySelector(".equal");
+if(div){
+    firstStore
+}
 
 const clear = document.querySelector(".clear");
 
