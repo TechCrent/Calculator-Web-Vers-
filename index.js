@@ -1,15 +1,12 @@
 
 //Main Function
-one.addEventListener("click",function(){
+/*one.addEventListener("click",function(){
     if (screen.innerText > 0){
         screen.innerText += "1";
     }else{
         screen.innerText = "1";
     }
-});
-
-//Array Idea
-numbers=[zero,one,two,three,four,five,six,seven,eight,nine];
+});*/
 
 
 const screen = document.querySelector(".scr");
@@ -33,22 +30,25 @@ const del = document.querySelector(".del");
 
 
 const one = document.querySelector(".one");
-
 const two = document.querySelector(".two");
-
 const three = document.querySelector(".three");
-
 const four = document.querySelector(".four");
-
 const five = document.querySelector(".five");
-
 const six = document.querySelector(".six");
-
 const seven = document.querySelector(".seven");
-
 const eight = document.querySelector(".eight");
-
 const nine = document.querySelector(".nine");
-
 const zero = document.querySelector(".zer");
 
+//Array Idea
+numbers=[zero,one,two,three,four,five,six,seven,eight,nine];
+for(let num of numbers){
+    num.addEventListener("click",function(){
+        if (screen.innerText > 0){
+            screen.innerText += num.innerText;
+        }else{
+            screen.innerText = num.innerText;
+        }
+    })
+
+}
