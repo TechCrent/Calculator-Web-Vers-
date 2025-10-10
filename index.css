@@ -23,6 +23,15 @@
     padding: 0;
     margin: 0;
     background-color: black;
+    color: white;
+    font-size: 30px;
+    font-family: sans-serif;
+}
+
+.scr{
+    display: flex;
+    align-items: center;
+    justify-content: right;
 }
 
 .clear,.del,.div,.mul, .plus,.minus,.equal,.one,.two,.three,.four,.five,.six,.seven,.eight,.nine,.zer{
