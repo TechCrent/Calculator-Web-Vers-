@@ -37,6 +37,16 @@
     background-color: #d8d9db;
 }
 
+/*hover for normal buttons*/
+.clear:hover,.del:hover,.one:hover,.two:hover,.three:hover,.four:hover,.five:hover,.six:hover,.seven:hover,.eight:hover,.nine:hover,.zer:hover{
+    background-color: #ebebeb;
+}
+
+/*hover for calculation buttons*/
+.div:hover,.mul:hover,.minus:hover,.plus:hover,.equal:hover{
+    background-color: #e3a260;
+}
+
 .div,.mul,.minus,.plus,.equal{
     background-color: #df974c;
     color: white;
