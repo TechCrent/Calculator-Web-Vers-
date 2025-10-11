@@ -1,5 +1,5 @@
 
-//Main Function
+//Main Function idea 
 /*one.addEventListener("click",function(){
     if (screen.innerText > 0){
         screen.innerText += "1";
@@ -13,36 +13,64 @@
 
 const screen = document.querySelector(".scr");
 
-let currentNumber = 0;
-let pastNumber = 0;
 
-
-
+//Declaration of Symbols
 const div = document.querySelector(".div");
 const mul = document.querySelector(".mul");
 const minus = document.querySelector(".minus");
 const plus = document.querySelector(".plus");
 
+//Calculation Declarations
+let currentNumber = 0;
+let pastNumber = 0;
+let currentOperator = '';
+let result = 0;
+
+//Calculation Logic
 let operator = [div,mul,minus,plus];
-
-
 for( let sym of operator){
     sym.addEventListener("click",function(){
-    if (screen.innerText > 0 && pastNumber == 0){
+    //Assigning operators to variables
+    if(sym == div){
+        currentOperator = '/'
+    }else if(sym == mul){
+        currentOperator = '*'
+    }else if(sym == minus){
+        currentOperator = '-'
+    }else if(sym == plus){
+        currentOperator = '+'
+    }        
+
+    //Setting logic for initial storage
+    if (Number(screen.innerText) > 0 && pastNumber == 0){
         pastNumber = Number(screen.innerText);
+        currentNumber = 0;
         screen.innerText = 0;
-    }else if(screen.innerText > 0 && pastNumber > 0){
+    }else if(Number(screen.innerText) > 0 && pastNumber > 0){
         currentNumber = Number(screen.innerText)
         screen.innerText = 0;
     }
 
-    if(operator == div){
 
-    }
     })
 }
 
+
 const equal = document.querySelector(".equal");
+equal.addEventListener("click",function(){
+    //Setting logic for current number logic
+    if(pastNumber > 0){
+        currentNumber = Number(screen.innerText)
+    }
+
+    //Assigning calculation to operators
+    if(currentOperator == "+" && pastNumber > 0){
+        result = pastNumber + currentNumber;
+        pastNumber = result;
+
+    }
+    screen.innerText = result;
+})
 
 
 const clear = document.querySelector(".clear");
