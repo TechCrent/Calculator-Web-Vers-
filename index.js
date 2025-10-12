@@ -8,8 +8,6 @@
     }
 });*/
 
-//Adding Function
-
 
 const screen = document.querySelector(".scr");
 
@@ -26,7 +24,7 @@ let pastNumber = 0;
 let currentOperator = '';
 let result = 0;
 
-//Calculation Logic
+//Calculation Logic on operator click
 let operator = [div,mul,minus,plus];
 for( let sym of operator){
     sym.addEventListener("click",function(){
@@ -48,12 +46,30 @@ for( let sym of operator){
         screen.innerText = 0;
     }else if(Number(screen.innerText) > 0 && pastNumber > 0){
         currentNumber = Number(screen.innerText)
+        pastNumber = calc(pastNumber,currentNumber,currentOperator);
         screen.innerText = 0;
     }
 
-
+ 
     })
 }
+
+//Adding calculation Function
+function calc(pastNumber,currentNumber,currentOperator){
+    if(currentOperator == "+" && pastNumber > 0){
+        result = pastNumber + currentNumber;
+    }else if(currentOperator == "-" && pastNumber > 0){
+        result = pastNumber - currentNumber;
+    }else if(currentOperator == "*" && pastNumber > 0){
+        result = pastNumber * currentNumber;
+    }else if(currentOperator == "/" && pastNumber > 0){
+        result = pastNumber / currentNumber;
+    }
+
+    pastNumber = result;
+    return pastNumber, result;
+}
+
 
 
 const equal = document.querySelector(".equal");
@@ -61,15 +77,18 @@ equal.addEventListener("click",function(){
     //Setting logic for current number logic
     if(pastNumber > 0){
         currentNumber = Number(screen.innerText)
-    }
-
+        result = calc(pastNumber,currentNumber,currentOperator);
+        pastNumber = result;
+        screen.innerText = result;
+    }  
     //Assigning calculation to operators
+    /*
     if(currentOperator == "+" && pastNumber > 0){
         result = pastNumber + currentNumber;
         pastNumber = result;
 
-    }
-    screen.innerText = result;
+    }*/
+
 })
 
 
