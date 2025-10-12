@@ -44,9 +44,13 @@ for( let sym of operator){
         pastNumber = Number(screen.innerText);
         currentNumber = 0;
         screen.innerText = 0;
-    }else if(Number(screen.innerText) > 0 && pastNumber > 0){
+    }else if(Number(screen.innerText) > 0 && pastNumber > 0 && pastNumber != result){
         currentNumber = Number(screen.innerText)
         pastNumber = calc(pastNumber,currentNumber,currentOperator);
+        screen.innerText = 0;
+    }else if(Number(screen.innerText) > 0 && pastNumber == result){
+        pastNumber = result;
+        currentNumber = Number(screen.innerText)
         screen.innerText = 0;
     }
 
@@ -56,18 +60,17 @@ for( let sym of operator){
 
 //Adding calculation Function
 function calc(pastNumber,currentNumber,currentOperator){
-    if(currentOperator == "+" && pastNumber > 0){
+    if(currentOperator == "+"){
         result = pastNumber + currentNumber;
-    }else if(currentOperator == "-" && pastNumber > 0){
+    }else if(currentOperator == "-"){
         result = pastNumber - currentNumber;
-    }else if(currentOperator == "*" && pastNumber > 0){
+    }else if(currentOperator == "*"){
         result = pastNumber * currentNumber;
-    }else if(currentOperator == "/" && pastNumber > 0){
+    }else if(currentOperator == "/"){
         result = pastNumber / currentNumber;
     }
 
-    pastNumber = result;
-    return pastNumber, result;
+    return  result;
 }
 
 
@@ -76,10 +79,10 @@ const equal = document.querySelector(".equal");
 equal.addEventListener("click",function(){
     //Setting logic for current number logic
     if(pastNumber > 0){
-        currentNumber = Number(screen.innerText)
+        currentNumber = Number(screen.innerText) 
         result = calc(pastNumber,currentNumber,currentOperator);
-        pastNumber = result;
         screen.innerText = result;
+        pastNumber = result;
     }  
     //Assigning calculation to operators
     /*
