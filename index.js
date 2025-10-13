@@ -1,14 +1,3 @@
-
-//Main Function idea 
-/*one.addEventListener("click",function(){
-    if (screen.innerText > 0){
-        screen.innerText += "1";
-    }else{
-        screen.innerText = "1";
-    }
-});*/
-
-
 const screen = document.querySelector(".scr");
 
 
@@ -23,11 +12,15 @@ let currentNumber = 0;
 let pastNumber = 0;
 let currentOperator = '';
 let result = 0;
+let justCalculated = false;
+let expectingNewNumber = false;
 
 //Calculation Logic on operator click
 let operator = [div,mul,minus,plus];
 for( let sym of operator){
     sym.addEventListener("click",function(){
+    const numberOnScreen = Number(screen.innerText)
+
     //Assigning operators to variables
     if(sym == div){
         currentOperator = '/'
@@ -40,21 +33,21 @@ for( let sym of operator){
     }        
 
     //Setting logic for initial storage
-    if (Number(screen.innerText) > 0 && pastNumber == 0){
-        pastNumber = Number(screen.innerText);
-        currentNumber = 0;
-        screen.innerText = 0;
-    }else if(Number(screen.innerText) > 0 && pastNumber > 0 && pastNumber != result){
-        currentNumber = Number(screen.innerText)
+    //If Past Number is empty
+    if (pastNumber == 0 && !justCalculated){
+        pastNumber = numberOnScreen;
+        screen.innerText = "0";
+    //If Past Number is not empty(Chain calculation)
+    }else if(!expectingNewNumber){
+        currentNumber = numberOnScreen;
         pastNumber = calc(pastNumber,currentNumber,currentOperator);
-        screen.innerText = 0;
-    }else if(Number(screen.innerText) > 0 && pastNumber == result){
-        pastNumber = result;
-        currentNumber = Number(screen.innerText)
-        screen.innerText = 0;
+        screen.innerText = pastNumber;
+
     }
 
- 
+    expectingNewNumber = true;
+    justCalculated = false;
+
     })
 }
 
@@ -74,36 +67,34 @@ function calc(pastNumber,currentNumber,currentOperator){
 }
 
 
-
+//Equal button
 const equal = document.querySelector(".equal");
 equal.addEventListener("click",function(){
     //Setting logic for current number logic
-    if(pastNumber > 0){
+    if(pastNumber !== null && currentOperator !== null && !expectingNewNumber){
         currentNumber = Number(screen.innerText) 
         result = calc(pastNumber,currentNumber,currentOperator);
         screen.innerText = result;
         pastNumber = result;
+        justCalculated = true;
+        expectingNewNumber = true;
     }  
-    //Assigning calculation to operators
-    /*
-    if(currentOperator == "+" && pastNumber > 0){
-        result = pastNumber + currentNumber;
-        pastNumber = result;
-
-    }*/
-
 })
 
-
+//Clear Button
 const clear = document.querySelector(".clear");
 clear.addEventListener("click",function(){
     screen.innerText = "0";
     currentNumber = 0;
     pastNumber = 0;
+    currentOperator = '';
+    expectingNewNumber = false;
+    result = 0;
+    justCalculated = false;
 })
 
 
-
+//Delete Button
 const del = document.querySelector(".del");
 del.addEventListener("click",function(){
     if (screen.innerText > 0 && screen.innerText.length > 1){
@@ -130,11 +121,14 @@ const zero = document.querySelector(".zer");
 numbers=[zero,one,two,three,four,five,six,seven,eight,nine];
 for(let num of numbers){
     num.addEventListener("click",function(){
-        if (screen.innerText > 0){
-            screen.innerText += num.innerText;
-        }else{
+        if (screen.innerText == "0" || expectingNewNumber){
             screen.innerText = num.innerText;
+            expectingNewNumber = false;
+        }else{
+            screen.innerText += num.innerText;
+
         }
+        justCalculated = false;
     })
 
 }
