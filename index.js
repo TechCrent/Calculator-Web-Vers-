@@ -20,18 +20,22 @@ let operator = [div,mul,minus,plus];
 for( let sym of operator){
     sym.addEventListener("click",function(){
     const numberOnScreen = Number(screen.innerText)
+    let newOperator = '';
 
     //Assigning operators to variables
     if(sym == div){
-        currentOperator = '/'
+        newOperator = '/'
     }else if(sym == mul){
-        currentOperator = '*'
+        newOperator = '*'
     }else if(sym == minus){
-        currentOperator = '-'
+        newOperator = '-'
     }else if(sym == plus){
-        currentOperator = '+'
+        newOperator = '+'
     }        
 
+    if (justCalculated){
+        screen.innerText = '0';
+    }
     //Setting logic for initial storage
     //If Past Number is empty
     if (pastNumber == 0 && !justCalculated){
@@ -41,10 +45,12 @@ for( let sym of operator){
     }else if(!expectingNewNumber){
         currentNumber = numberOnScreen;
         pastNumber = calc(pastNumber,currentNumber,currentOperator);
-        screen.innerText = pastNumber;
+        screen.innerText = '0';
+
 
     }
 
+    currentOperator = newOperator;
     expectingNewNumber = true;
     justCalculated = false;
 
